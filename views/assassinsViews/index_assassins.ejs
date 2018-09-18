@@ -1,0 +1,22 @@
+<h1> Assassins </h1>
+        <ul>
+        <% assassins.forEach(function(assassin) { %>
+          <li>
+            <a href="/assassins/<%= assassin.id %>/edit">
+            </a>
+              <%= assassin.full_name %>
+              <%= assassin.code_names %>
+              <%= assassin.weapon %>
+              <%= assassin.contact_info %>
+              <%= assassin.age %>
+              <%= assassin.price %>
+              <%= assassin.rating %>
+              <%= assassin.kills %>
+
+          </li>
+          
+        <% }); %>
+        </ul>
+<a href="/newAssassin/">
+<button id= 'newAssassin'>New Assassin</button>
+</a>
