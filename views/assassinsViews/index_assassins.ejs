@@ -1,22 +1,31 @@
-<h1> Assassins </h1>
-        <ul>
-        <% assassins.forEach(function(assassin) { %>
-          <li>
-            <a href="/assassins/<%= assassin.id %>/edit">
-            </a>
-              <%= assassin.full_name %>
-              <%= assassin.code_names %>
-              <%= assassin.weapon %>
-              <%= assassin.contact_info %>
-              <%= assassin.age %>
-              <%= assassin.price %>
-              <%= assassin.rating %>
-              <%= assassin.kills %>
 
-          </li>
-          
+<h1> Assassins </h1>
+      
+      <table>
+            
+              <tr>
+                <th>ASSASSINS</th>
+                <th>CODE NAMES</th>
+                <th>WEAPONS</th>
+                <th>CONTACT INFO</th>
+                <th>AGE</th>
+                <th>PRICE</th>
+                <th>RATING</th>
+                <th>NO. OF KILLS</th>
+              </tr>
+              <% assassins.forEach(function(assassin) { %>
+              <tr>
+                <td><%= assassin.full_name %></td>
+                <td><%= assassin.code_names %></td>
+                <td><%= assassin.weapon %></td>
+                <td><%= assassin.contact_info %></td>
+                <td><%= assassin.age %></td>
+                <td><%= assassin.price %></td>
+                <td><%= assassin.rating %></td>
+                <td><%= assassin.kills %></td>
+              </tr>
         <% }); %>
-        </ul>
-<a href="/newAssassin/">
+      </table>
+<a href="new_assassin">
 <button id= 'newAssassin'>New Assassin</button>
 </a>

@@ -15,27 +15,40 @@ router.get('/assassins', (req, res, next) => {
 
 router.get('/assassins/:assassin_id', (req, res, next) => {
   knex('assassins')
-    .where('assassin_id', req.params.donut_id)
+    .where('assassin_id', req.params.assassin_id)
     .first()
     .then((assassins) => {
       if (!assassins) {
         return next();
       }
 
-      res.send(assassins);
+      res.render('assassinsViews/index_assassins', {assassins});
     })
     .catch((err) => {
       next(err);
     });
 });
 
-router.post('/assassins/new', (req, res, next) => {
+
+router.post('/assassins/posted', (req, res, next) => {
 
   knex('assassins')
-    .insert({ full_name: req.body.full_name, code_names: req.body.code_names, weapon: req.body.weapon, contact_info: req.body.contact_info, age: req.body.age, price: req.body.price, rating: req.body.rating, kills: req.body.kills}, '*')
-    .then((assassins) => {
-      res.send(assassins[0]);
+    .insert({ 
+      full_name: req.body.full_name, 
+      code_names: req.body.code_names, 
+      weapon: req.body.weapon, 
+      contact_info: req.body.contact_info, 
+      age: req.body.age, 
+      price: req.body.price, 
+      rating: req.body.rating, 
+      kills: req.body.kills}, '*')
+    .then(() => {
+      knex('assassins')
+      .orderBy('assassin_id')
+      .then((assassins) => {
+      res.render('assassinsViews/index_assassins', {assassins});
     })
+  })
     .catch((err) => {
       next(err);
     });
