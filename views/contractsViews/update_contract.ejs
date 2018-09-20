@@ -1,0 +1,81 @@
+<% include /Users/blythiemae/Galvanize/labs_Q2/killbase-app/views/header.ejs %>
+<body class="bg-div">
+    
+
+    <form class='form-horizontal' action='/update_contract/<%=contracts[0].contract_id %>' method = "POST">
+        <fieldset id='form-field'>
+        
+        <!-- Form Name -->
+        <legend id= "newAssassinFormTitle">New Contract</legend>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="target_name">Target Name</label>  
+          <div class="col-md-4">
+          <input id="target_name" name="target_name" required= "true" value = "<%= contracts[0].target_name %>" type="text" placeholder="Enter Name" class="form-control input-md">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+                <label class="col-md-4 control-label" for="target_location">Target Location</label>  
+                <div class="col-md-4">
+                <input id="target_location" name="target_location" required= "true" type="text" value = "<%= contracts[0].target_location %>"placeholder="Enter Location" class="form-control input-md">  
+                </div>
+              </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="target_photo">Target Photo</label>  
+          <div class="col-md-4">
+          <input id="target_photo" name="target_photo" required= "true" type="text" value = "<%= contracts[0].target_photo %>"placeholder="Enter Photo URL" class="form-control input-md">  
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="target_security">Target Security</label>  
+          <div class="col-md-4">
+          <input id="target_security" name="target_security" type="text" required= "true" value = "<%= contracts[0].target_security %>"placeholder="Enter a Number" class="form-control input-md">  
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="client_name">Client Name</label>  
+          <div class="col-md-4">
+          <input id="client_name" name="client_name" required= "true" type="text" value = "<%= contracts[0].client_name %>"placeholder="Enter Client Name" class="form-control input-md">  
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="budget">Budget</label>  
+          <div class="col-md-4">
+          <input id="budget" name="budget" required= "true" type="text" value = "<%= contracts[0].budget %>" placeholder="Enter Budget" class="form-control input-md">  
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="price">Complete</label>  
+          <div class="col-md-4">
+          <input id="complete" name="complete" required= "true" type="text" value = "<%= contracts[0].complete %>"placeholder="Enter True/False" class="form-control input-md">  
+          </div>
+        </div>
+        
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="newContract"></label>
+          <div class="col-md-4">
+                <button type="submit" class="form-submit" >Save</button>
+          </div>
+        </div>
+        
+        </fieldset>
+        </form>
+    </body>
+
+
+</html>
+

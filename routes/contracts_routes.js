@@ -40,7 +40,7 @@ router.post('/contracts/posted', (req, res, next) => {
     .insert({ 
       target_name: req.body.target_name, 
       target_location: req.body.target_location,
-      target_photo: 'https://i.pinimg.com/originals/dc/3e/a0/dc3ea01b201ad8607ad93f1211ee5b83.gif',
+      target_photo: req.body.target_photo || 'https://gifer.com/i/VCjc.gif',
       target_security: req.body.target_security, 
       client_name: req.body.client_name, 
       budget: req.body.budget, 
@@ -79,7 +79,7 @@ router.post('/update_contract/:contract_id', (req, res, next) => {
         .update({ 
             target_name: req.body.target_name, 
             target_location: req.body.target_location,
-            target_photo: 'https://i.pinimg.com/originals/dc/3e/a0/dc3ea01b201ad8607ad93f1211ee5b83.gif',
+            target_photo: req.body.target_photo,
             target_security: req.body.target_security, 
             client_name: req.body.client_name, 
             budget: req.body.budget, 

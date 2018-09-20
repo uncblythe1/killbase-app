@@ -38,7 +38,7 @@ router.post('/assassins/posted', (req, res, next) => {
 
   knex('assassins')
     .insert({ 
-      photo: 'https://i.pinimg.com/originals/dc/3e/a0/dc3ea01b201ad8607ad93f1211ee5b83.gif',
+      photo: req.body.photo || 'https://i.pinimg.com/originals/dc/3e/a0/dc3ea01b201ad8607ad93f1211ee5b83.gif',
       full_name: req.body.full_name, 
       code_names: req.body.code_names, 
       weapon: req.body.weapon, 
@@ -80,13 +80,9 @@ router.post('/update_assassin/:assassin_id', (req, res, next) => {
        knex('assassins')
         .update({ full_name: req.body.full_name, code_names: req.body.code_names, weapon: req.body.weapon, contact_info: req.body.contact_info, age: req.body.age, price: req.body.price, rating: req.body.rating, kills: req.body.kills }, '*')
         .where('assassin_id', req.params.assassin_id)
-        .then(() => {
-          knex('assassins')
-          .orderBy('assassin_id')
-          .then((assassins) => {
+        .then((assassins) => {
           res.render('assassinsViews/index_assassins', {assassins});
         })
-      })
         .catch((err) => {
           next(err);
         });
