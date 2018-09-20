@@ -1,0 +1,42 @@
+
+    
+
+<% include /Users/blythiemae/Galvanize/labs_Q2/killbase-app/views/header.ejs %>
+<body>
+    
+
+<% assassins.forEach(function(assassin) { %>
+<section class="container">
+     
+    <div class="row active-with-click">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <article class="material-card Red">
+                <h2>
+                    <span><%= assassin.full_name %></span>
+                </h2>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        <%= assassin.code_names %>
+                    </strong>
+                
+                    <div class="mc-description">
+                        <p class="card-text"><%= assassin.weapon %></p>
+                        <p class="card-text"><%= assassin.contact_info %></p>
+                        <p class="card-text"><%= assassin.age %></p>
+                        <p class="card-text"><%= assassin.price %></p>
+                        <p class="card-text"><%= assassin.rating %></p>
+                        <p class="card-text"><%= assassin.kills %></p>
+                    </div>
+                </div>
+                
+                
+                    
+            </article>
+        </div>
+        
+    </div>
+</section>
+      <% }); %>
+
+</body>
+</html>

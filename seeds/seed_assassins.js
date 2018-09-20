@@ -6,6 +6,7 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('assassins').insert([
         {
+          "photo": 'https://images.pexels.com/photos/1108598/pexels-photo-1108598.jpeg?auto=compress&cs=tinysrgb&h=350',
           "full_name": "Alexander Duggan",
           "code_names": "The Jackal",
           "weapon": "Sniper rifle",
@@ -16,6 +17,7 @@ exports.seed = function(knex, Promise) {
           "kills": 28
         },
         {
+          "photo": 'https://images.pexels.com/photos/226325/pexels-photo-226325.jpeg?auto=compress&cs=tinysrgb&h=350',
           "full_name": "Anton Chigurh",
           "code_names": "Old Man",
           "weapon": "Pneumatic bolt gun",
@@ -26,7 +28,8 @@ exports.seed = function(knex, Promise) {
           "kills": 72
         },
         {
-          "full_name": "",
+          "photo": 'https://images.pexels.com/photos/1079458/pexels-photo-1079458.jpeg?auto=compress&cs=tinysrgb&h=350',
+          "full_name": "YO",
           "code_names": "Ghost Dog",
           "weapon": "Pistol",
           "contact_info": "ghostdog@gmail.com",
@@ -36,6 +39,7 @@ exports.seed = function(knex, Promise) {
           "kills": 35
         },
         {
+          "photo": 'https://images.pexels.com/photos/542514/pexels-photo-542514.jpeg?auto=compress&cs=tinysrgb&h=350',
           "full_name": "Jason Bourne",
           "code_names": "",
           "weapon": "Parkour",
@@ -46,6 +50,7 @@ exports.seed = function(knex, Promise) {
           "kills": 48
         },
         {
+          "photo": 'https://images.pexels.com/photos/458497/pexels-photo-458497.jpeg?auto=compress&cs=tinysrgb&h=350',
           "full_name": "John Wick",
           "code_names": "Baba Yaga",
           "weapon": "Lots of guns",
@@ -56,6 +61,7 @@ exports.seed = function(knex, Promise) {
           "kills": 433
         },
         {
+          "photo": 'https://images.pexels.com/photos/735552/pexels-photo-735552.jpeg?auto=compress&cs=tinysrgb&h=350',
           "full_name": "Jules Winnfield",
           "code_names": "",
           "weapon": "Pistol",
@@ -66,6 +72,7 @@ exports.seed = function(knex, Promise) {
           "kills": 13
         },
         {
+          "photo": 'https://images.pexels.com/photos/1398403/pexels-photo-1398403.jpeg?auto=compress&cs=tinysrgb&h=350',
           "full_name": "Leon",
           "code_names": "The Professional",
           "weapon": "Everything",
@@ -76,6 +83,7 @@ exports.seed = function(knex, Promise) {
           "kills": 87
         },
         {
+          "photo": 'https://images.pexels.com/photos/959284/pexels-photo-959284.jpeg?auto=compress&cs=tinysrgb&h=350',
           "full_name": "Nikita Mears",
           "code_names": "Nikita",
           "weapon": "Silenced pistols",
@@ -86,16 +94,7 @@ exports.seed = function(knex, Promise) {
           "kills": 32
         },
         {
-          "full_name": "Nikita Mears",
-          "code_names": "La Femme Nikita",
-          "weapon": "Silenced pistols",
-          "contact_info": "nikita@gmail.com",
-          "age": 28,
-          "price": 30,
-          "rating": 7,
-          "kills": 32
-        },
-        {
+          "photo": 'https://images.pexels.com/photos/1327479/pexels-photo-1327479.jpeg?auto=compress&cs=tinysrgb&h=350',
           "full_name": "Pickle Rick",
           "code_names": "Solenya",
           "weapon": "Lasers and office supplies",

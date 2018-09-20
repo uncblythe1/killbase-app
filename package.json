@@ -17,15 +17,10 @@
   },
   "homepage": "https://github.com/uncblythe1/killbase-app#readme",
   "dependencies": {
-    "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
-    "csv-parse": "^3.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "iconv-lite": "^0.4.24",
     "knex": "^0.15.2",
-    "knex-csv-seeder": "^0.4.1",
-    "lodash": "^4.17.11",
     "nodemon": "^1.18.4",
     "pg": "^7.4.3"
   }

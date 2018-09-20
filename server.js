@@ -10,6 +10,7 @@ app.disable('x-powered-by');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(__dirname + '/public'));
 
 let assassins = require('./routes/assassins_routes');
 // let contracts = require('./routes/contracts_routes');
@@ -31,21 +32,21 @@ app.set('view engine', 'ejs');
 // // app.use(cors());
 
 
-app.use((_req, res) => {
-    res.sendStatus(404);
-  });
+// app.use((_req, res) => {
+//     res.sendStatus(404);
+//   });
   
-app.use((err, _req, res, _next) => {
-if (err.status) {
-    return res
-    .status(err.status)
-    .set('Content-Type', 'text/plain')
-    .send(err.message);
-}
+// app.use((err, _req, res, _next) => {
+// if (err.status) {
+//     return res
+//     .status(err.status)
+//     .set('Content-Type', 'text/plain')
+//     .send(err.message);
+// }
 
-console.error(err.stack);
-res.sendStatus(500);
-});
+// console.error(err.stack);
+// res.sendStatus(500);
+// });
   
 
 

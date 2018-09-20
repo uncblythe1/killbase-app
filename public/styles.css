@@ -1,0 +1,116 @@
+.header {
+    border-radius: 90%;
+    position:fixed;
+    top:40px;
+    width:100%;
+    height:100px;
+    z-index:0;
+    align-content: center;
+}
+nav {
+    float: right;
+    margin: 0;
+    overflow:hidden;
+    text-align: center;
+    font-family: monospace;
+    font-size: 20%;
+  }
+  
+  nav ul{
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li{
+    align-content: right;
+    display: inline-block;
+    list-style-type: none;
+    
+  }
+  
+  nav > ul > li > a {
+    color: rgb(46, 44, 44);
+    line-height: 4em;
+    font-size: 25px;
+    margin-right: 50px;
+  }
+  
+  .logo-img{
+    margin: -25px 15px 15px 25px;
+    vertical-align: -webkit-baseline-middle;
+    
+  }
+  
+  .bg-div{
+    padding-top: 50%;
+    z-index: -1;
+    background-image: url('KBmap.png');
+    background-repeat: repeat;
+    background-position: center;
+  }
+  #bg-div2{
+    padding-top: 50%;
+    z-index: -1;
+    background-image: url('KBmap.png');
+    background-repeat: repeat;
+    background-position: center;
+  }
+
+  .gallery-block{
+    margin-top:-400px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+  }
+  
+  .gallery-block .heading{
+      margin-bottom: 50px;
+      text-align: center;
+  }
+  
+  .gallery-block .heading h2{
+      font-weight: bold;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+  }
+  
+  .gallery-block.cards-gallery h6 {
+    font-size: 17px;
+    font-weight: bold; 
+  }
+  
+  .gallery-block.cards-gallery .card{
+    transition: 0.4s ease; 
+  }
+  
+  .gallery-block.cards-gallery .card img {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15); 
+  }
+  
+  .gallery-block.cards-gallery .card-body {
+    text-align: center; 
+  }
+  
+  .gallery-block.cards-gallery .card-body p {
+    font-size: 15px; 
+  }
+  
+  .gallery-block.cards-gallery a {
+    color: #212529; 
+  }
+  
+  .gallery-block.cards-gallery a:hover {
+    text-decoration: none; 
+  }
+  
+  .gallery-block.cards-gallery .card {
+    margin-bottom: 30px; 
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  @media (min-width: 576px) {
+  
+    .gallery-block .transform-on-hover:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important; 
+    }
+  }

@@ -13,20 +13,24 @@ router.get('/assassins', (req, res, next) => {
     });
 });
 
+
 router.get('/assassins/:assassin_id', (req, res, next) => {
   knex('assassins')
     .where('assassin_id', req.params.assassin_id)
-    .first()
     .then((assassins) => {
       if (!assassins) {
         return next();
       }
 
-      res.render('assassinsViews/index_assassins', {assassins});
+      res.render('assassinsViews/show_assassin', {assassins});
     })
     .catch((err) => {
       next(err);
     });
+});
+
+router.get('/new_assassin', (req, res, next) => {
+  res.render('assassinsViews/new_assassin');
 });
 
 
@@ -34,6 +38,7 @@ router.post('/assassins/posted', (req, res, next) => {
 
   knex('assassins')
     .insert({ 
+      photo: req.body.photo,
       full_name: req.body.full_name, 
       code_names: req.body.code_names, 
       weapon: req.body.weapon, 
@@ -54,7 +59,11 @@ router.post('/assassins/posted', (req, res, next) => {
     });
 });
 
-router.patch('/assassins/:assassin_id', (req, res, next) => {
+router.get('/update_assassin', (req, res, next) => {
+  res.render('assassinsViews/update_assassin');
+});
+
+router.post('/assassin/update', (req, res, next) => {
   knex('assassins')
     .where('assassin_id', req.params.assassin_id)
     .first()
@@ -65,37 +74,35 @@ router.patch('/assassins/:assassin_id', (req, res, next) => {
 
       return knex('assassins')
         .update({ full_name: req.body.full_name, code_names: req.body.code_names, weapon: req.body.weapon, contact_info: req.body.contact_info, age: req.body.age, price: req.body.price, rating: req.body.rating, kills: req.body.kills }, '*')
-        .where('assassin_id', req.params.assassin_id);
+        .where('assassin_id', req.params.assassin_id)
+        .then(() => {
+          knex('assassins')
+          .orderBy('assassin_id')
+          .then((assassins) => {
+          res.render('assassinsViews/index_assassins', {assassins});
+        })
+      })
+        .catch((err) => {
+          next(err);
+        });
     })
-    .then((assassins) => {
-      res.send(assassins);
+});
+
+router.delete('/assassins/:id', function(req, res) {
+  knex('assassins')
+    .select('id')
+    .where('id', req.params.id)
+    .first()
+    .del()
+    .then(function(assassins) {
+      res.redirect('/assassins');
     })
-    .catch((err) => {
-      next(err);
+    .catch(function(err) {
+      console.log(err);
+      res.sendStatus(500);
     });
 });
 
-router.delete('/assassins/:assassin_id', (req, res, next) => {
-  let assassin;
-
-  knex('assassins')
-    .where('assassin_id', req.params.assassin_id)
-    .first()
-    .then((row) => {
-      if (!row) {
-        return next();
-      }
-
-      assassin = row;
-
-      return knex('assassins')
-        .del()
-        .where('assassin_id', req.params.assassin_id);
-    })
-    .then(() => {
-      delete assassin.assassin_id;
-      res.send(assassin.assassin_id);
-    });
-  });
+  
 
 module.exports = router;

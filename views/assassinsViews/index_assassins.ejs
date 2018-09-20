@@ -1,31 +1,49 @@
-
-<h1> Assassins </h1>
-      
-      <table>
-            
-              <tr>
-                <th>ASSASSINS</th>
-                <th>CODE NAMES</th>
-                <th>WEAPONS</th>
-                <th>CONTACT INFO</th>
-                <th>AGE</th>
-                <th>PRICE</th>
-                <th>RATING</th>
-                <th>NO. OF KILLS</th>
-              </tr>
-              <% assassins.forEach(function(assassin) { %>
-              <tr>
-                <td><%= assassin.full_name %></td>
-                <td><%= assassin.code_names %></td>
-                <td><%= assassin.weapon %></td>
-                <td><%= assassin.contact_info %></td>
-                <td><%= assassin.age %></td>
-                <td><%= assassin.price %></td>
-                <td><%= assassin.rating %></td>
-                <td><%= assassin.kills %></td>
-              </tr>
+<head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Cards Gallery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+      <link rel="stylesheet" href="cards-gallery.css">
+  </head>
+  <% include /Users/blythiemae/Galvanize/labs_Q2/killbase-app/views/header.ejs %>
+  <body>
+     <section  class="gallery-block cards-gallery">
+        <div class="container">
+            <div class="heading">
+              <h2>Active Assassins</h2>
+            </div>
+            <div id = "bg-div2" class="row">
+        <% assassins.forEach(function(assassin) { %>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 transform-on-hover">
+                      <a class="lightbox" href='<%= assassin.photo %>'>
+                        <img src='<%= assassin.photo %>' alt="Card Image" class="card-img-top">
+                      </a>
+                        <div class="card-body">
+                            <h6><a href="#">'<%= assassin.full_name %>'</a></h6>
+                <p class="text-muted card-text"><%= assassin.code_names %></p>
+                <p class="text-muted card-text"><%= assassin.weapon %></p>
+                <p class="text-muted card-text"><%= assassin.contact_info %></p>
+                <p class="text-muted card-text"><%= assassin.age %></p>
+                <p class="text-muted card-text"><%= assassin.price %></p>
+                <p class="text-muted card-text"><%= assassin.kills %></p>
+                <a href="update_assassin"><button id= 'editAssassin'>Edit</button></a>
+                <a href="new_assassin"> <button id= 'deleteAssassin'>Delete</button></a>
+              </div>
+                    </div>
+          </div>
         <% }); %>
-      </table>
-<a href="new_assassin">
-<button id= 'newAssassin'>New Assassin</button>
-</a>
+            </div>
+        </div>
+      </section>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+      <script>
+          baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
+    </script>
+    <a href="new_assassin">
+        <button id= 'newAssassin'>New Assassin</button>
+    </a>
+  </body>
+  </html>
