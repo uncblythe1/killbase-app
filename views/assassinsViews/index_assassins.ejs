@@ -2,13 +2,16 @@
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Cards Gallery</title>
+      <title>Active Contracts</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
       <link rel="stylesheet" href="cards-gallery.css">
   </head>
   <% include /Users/blythiemae/Galvanize/labs_Q2/killbase-app/views/header.ejs %>
   <body>
+      <a href="new_assassin">
+          <p id= 'newAssassinBtn'>New Assassin</p>
+      </a>
      <section  class="gallery-block cards-gallery">
         <div class="container">
             <div class="heading">
@@ -21,19 +24,19 @@
                       <a class="lightbox" href='<%= assassin.photo %>'>
                         <img src='<%= assassin.photo %>' alt="Card Image" class="card-img-top">
                       </a>
-                        <div class="card-body">
-                            <h6><a href="#">'<%= assassin.full_name %>'</a></h6>
-                <p class="text-muted card-text"><%= assassin.code_names %></p>
-                <p class="text-muted card-text"><%= assassin.weapon %></p>
-                <p class="text-muted card-text"><%= assassin.contact_info %></p>
-                <p class="text-muted card-text"><%= assassin.age %></p>
-                <p class="text-muted card-text"><%= assassin.price %></p>
-                <p class="text-muted card-text"><%= assassin.kills %></p>
-                <a href="update_assassin"><button id= 'editAssassin'>Edit</button></a>
-                <a href="new_assassin"> <button id= 'deleteAssassin'>Delete</button></a>
-              </div>
+                        <div class="card-body"><a href='/assassins/<%= assassin.assassin_id %>'>
+                            <h6><%= assassin.full_name %></h6>
+                <p class="text-muted card-text">'<%= assassin.code_names %>'</p>
+                <p class="text-muted card-text">Weapon:  <%= assassin.weapon %></p>
+                <p class="text-muted card-text">Contact Info:  <%= assassin.contact_info %></p>
+                <p class="text-muted card-text">Age:  <%= assassin.age %></p>
+                <p class="text-muted card-text">Price:  <%= assassin.price %></p>
+                <p class="text-muted card-text">No. of Kills:  <%= assassin.kills %></p>
+                <a href="/update_assassin/<%=assassin.assassin_id %>"><button id= 'editAssassin'>Edit</button></a>
+                <form action ="/delete_assassin/<%= assassin.assassin_id %>" method="POST"> <button id= 'deleteAssassin'>Delete</button></form>
+                        </div>
                     </div>
-          </div>
+                </div>
         <% }); %>
             </div>
         </div>
@@ -42,8 +45,6 @@
       <script>
           baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
     </script>
-    <a href="new_assassin">
-        <button id= 'newAssassin'>New Assassin</button>
-    </a>
+    
   </body>
   </html>

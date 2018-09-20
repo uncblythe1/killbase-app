@@ -1,0 +1,80 @@
+<% include /Users/blythiemae/Galvanize/labs_Q2/killbase-app/views/header.ejs %>
+<body class="bg-div">
+    
+
+<form class="form-horizontal" action="/contracts/posted" method = "post">
+        <fieldset id='form-field'>
+        
+        <!-- Form Name -->
+        <legend id= "newAssassinFormTitle">New Contract</legend>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="target_name">Target Name</label>  
+          <div class="col-md-4">
+          <input id="target_name" name="target_name" required= "true" type="text" placeholder="Enter Name" class="form-control input-md">
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="target_location">Target Location</label>  
+          <div class="col-md-4">
+          <input id="target_location" name="target_location" required= "true" type="text" placeholder="Enter Target Location" class="form-control input-md">  
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="target_photo">Photo</label>  
+          <div class="col-md-4">
+          <input id="target_photo" name="target_photo" type="text" required= "true" placeholder="Enter Photo URL" class="form-control input-md">  
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="target_security">Target Security</label>  
+          <div class="col-md-4">
+          <input id="target_security" name="target_security" required= "true" type="text" placeholder="Enter a Number" class="form-control input-md">  
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="client_name">Client Name</label>  
+          <div class="col-md-4">
+          <input id="client_name" name="client_name" required= "true" type="text" placeholder="Enter Client Name" class="form-control input-md">  
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="budget">Budget</label>  
+          <div class="col-md-4">
+          <input id="budget" name="budget" required= "true" type="text" placeholder="Enter Budget" class="form-control input-md">  
+          </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="complete">Rating</label>  
+          <div class="col-md-4">
+          <input id="complete" name="complete" required= "true" type="text" placeholder="Enter Rating" class="form-control input-md">  
+          </div>
+        </div>
+        
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="newContract"></label>
+          <div class="col-md-4">
+                <button type="submit" class="form-submit" >Submit</button>
+          </div>
+        </div>
+        
+        </fieldset>
+        </form>
+    </body>
+
+
+</html>

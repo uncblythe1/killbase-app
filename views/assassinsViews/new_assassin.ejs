@@ -1,21 +1,20 @@
 
   
 <% include /Users/blythiemae/Galvanize/labs_Q2/killbase-app/views/header.ejs %>
-<body>
+<body class="bg-div">
     
 
 <form class="form-horizontal" action="/assassins/posted" method = "post">
-        <fieldset>
+        <fieldset id='form-field'>
         
         <!-- Form Name -->
-        <legend>New Assassin</legend>
+        <legend id= "newAssassinFormTitle">New Assassin</legend>
         
         <!-- Text input-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="full_name">Full Name</label>  
           <div class="col-md-4">
-          <input id="full_name" name="full_name" type="text" placeholder="Enter Name" class="form-control input-md">
-          <span class="help-block">help</span>  
+          <input id="full_name" name="full_name" required= "true" type="text" placeholder="Enter Name" class="form-control input-md">
           </div>
         </div>
         
@@ -23,8 +22,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="code_names">Code Names</label>  
           <div class="col-md-4">
-          <input id="code_names" name="code_names" type="text" placeholder="Enter Code Names" class="form-control input-md">
-          <span class="help-block">help</span>  
+          <input id="code_names" name="code_names" required= "true" type="text" placeholder="Enter Code Names" class="form-control input-md">  
           </div>
         </div>
         
@@ -32,8 +30,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="weapon">Weapon</label>  
           <div class="col-md-4">
-          <input id="weapon" name="weapon" type="text" placeholder="Hands/Ninja Stars..." class="form-control input-md">
-          <span class="help-block">help</span>  
+          <input id="weapon" name="weapon" type="text" required= "true" placeholder="Hands/Ninja Stars..." class="form-control input-md">  
           </div>
         </div>
         
@@ -41,8 +38,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="contact_info">Contact Info</label>  
           <div class="col-md-4">
-          <input id="contact_info" name="contact_info" type="text" placeholder="Fake info only please..." class="form-control input-md">
-          <span class="help-block">help</span>  
+          <input id="contact_info" name="contact_info" required= "true" type="text" placeholder="Fake info only please..." class="form-control input-md">  
           </div>
         </div>
         
@@ -50,8 +46,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="age">Age</label>  
           <div class="col-md-4">
-          <input id="age" name="age" type="text" placeholder="Enter Age" class="form-control input-md">
-          <span class="help-block">help</span>  
+          <input id="age" name="age" required= "true" type="text" placeholder="Enter Age" class="form-control input-md">  
           </div>
         </div>
         
@@ -59,8 +54,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="price">Minimum Price</label>  
           <div class="col-md-4">
-          <input id="price" name="price" type="text" placeholder="Enter Minimum Price" class="form-control input-md">
-          <span class="help-block">help</span>  
+          <input id="price" name="price" required= "true" type="text" placeholder="Enter Minimum Price" class="form-control input-md">  
           </div>
         </div>
         
@@ -68,8 +62,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="rating">Rating</label>  
           <div class="col-md-4">
-          <input id="rating" name="rating" type="text" placeholder="Enter Rating" class="form-control input-md">
-          <span class="help-block">help</span>  
+          <input id="rating" name="rating" required= "true" type="text" placeholder="Enter Rating" class="form-control input-md">  
           </div>
         </div>
         
@@ -77,8 +70,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="kills">No. of Kills</label>  
           <div class="col-md-4">
-          <input id="kills" name="kills" type="text" placeholder="Enter Number of Kills" class="form-control input-md">
-          <span class="help-block">help</span>  
+          <input id="kills" name="kills" type="text" required= "true" placeholder="Enter Number of Kills" class="form-control input-md">  
           </div>
         </div>
         
@@ -86,7 +78,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="newassassin"></label>
           <div class="col-md-4">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="form-submit" >Submit</button>
           </div>
         </div>
         

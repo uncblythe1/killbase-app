@@ -1,0 +1,49 @@
+<head>
+        <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Active Assassins</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+          <link rel="stylesheet" href="cards-gallery.css">
+      </head>
+      <% include /Users/blythiemae/Galvanize/labs_Q2/killbase-app/views/header.ejs %>
+      <body>
+          <a href="new_contract">
+              <p id= 'newAssassinBtn'>New Contract</p>
+          </a>
+         <section  class="gallery-block cards-gallery">
+            <div class="container">
+                <div class="heading">
+                  <h2>Active Contracts</h2>
+                </div>
+                <div id = "bg-div2" class="row">
+            <% contracts.forEach(function(contract) { %>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0 transform-on-hover">
+                          <a class="lightbox" href='<%= contract.target_photo %>'>
+                            <img src='<%= contract.target_photo %>' alt="Card Image" class="card-img-top">
+                          </a>
+                            <div class="card-body"><a href='/contracts/<%= contract.contract_id %>'>
+                                <h6><%= contract.target_name %></h6>
+                    <p class="text-muted card-text">Location:  <%= contract.target_location %></p>
+                    <p class="text-muted card-text">Security:  <%= contract.target_security %></p>
+                    <p class="text-muted card-text">Client Name:  <%= contract.client_name %></p>
+                    <p class="text-muted card-text">Budget:  <%= contract.budget %></p>
+                    <p class="text-muted card-text">Complete:  <%= contract.complete %></p>
+                    <a href="/update_contract/<%=contract.contract_id %>"><button id= 'editContract'>Edit</button></a>
+                    <form action ="/delete_contract/<%= contract.contract_id %>" method="POST"> <button id= 'deleteContract'>Complete</button></form>
+                            </div>
+                        </div>
+                    </div>
+            <% }); %>
+                </div>
+            </div>
+          </section>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+          <script>
+              baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
+        </script>
+        
+      </body>
+      </html>

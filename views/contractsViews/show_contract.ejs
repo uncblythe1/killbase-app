@@ -10,30 +10,29 @@
       <% include /Users/blythiemae/Galvanize/labs_Q2/killbase-app/views/header.ejs %>
       <body>
             <a href="new_assassin">
-                    <button id= 'newAssassin'>New Assassin</button>
+                    <button id= 'newAssassin'>New Contract</button>
                 </a>
          <section  class="gallery-block cards-gallery">
             <div class="container">
                 <div class="heading">
-                  <h2>Active Assassins</h2>
+                  <h2>Active Contracts</h2>
                 </div>
                 <div id = "bg-div2" class="row">
-            <% assassins.forEach(function(assassin) { %>
+            <% contracts.forEach(function(contract) { %>
                     <div class="col-md-6 col-lg-4">
                         <div class="card border-0 transform-on-hover">
-                          <a class="lightbox" href='<%= assassin.photo %>'>
-                            <img src='<%= assassin.photo %>' alt="Card Image" class="card-img-top">
+                          <a class="lightbox" href='<%= contract.target_photo %>'>
+                            <img src='<%= contract.target_photo %>' alt="Target Photo" class="card-img-top">
                           </a>
                             <div class="card-body">
-                                <h6><a href="#"><%= assassin.full_name %></a></h6>
-                    <p class="text-muted card-text">'<%= assassin.code_names %>'</p>
-                    <p class="text-muted card-text"><%= assassin.weapon %></p>
-                    <p class="text-muted card-text"><%= assassin.contact_info %></p>
-                    <p class="text-muted card-text"><%= assassin.age %></p>
-                    <p class="text-muted card-text"><%= assassin.price %></p>
-                    <p class="text-muted card-text"><%= assassin.kills %></p>
-                    <a href="/update_assassin/<%=assassin.assassin_id %>"><button id= 'editAssassin'>Edit</button></a>
-                    <form action ="/delete_assassin/<%= assassin.assassin_id%>" method="POST"> <button id= 'deleteAssassin'>Delete</button></form>
+                                <h6><a href="#"><%= contract.target_name %></a></h6>
+                                <p class="text-muted card-text">Location:  <%= contract.target_location %></p>
+                                <p class="text-muted card-text">Security:  <%= contract.target_security %></p>
+                                <p class="text-muted card-text">Client Name:  <%= contract.client_name %></p>
+                                <p class="text-muted card-text">Budget:  <%= contract.budget %></p>
+                                <p class="text-muted card-text">Complete:  <%= contract.complete %></p>
+                                <a href="/update_contract/<%=contract.contract_id %>"><button id= 'editContract'>Edit</button></a>
+                                <form action ="/delete_contract/<%= contract.contract_id %>" method="POST"> <button id= 'deleteContract'>Complete</button></form>
                             </div>
                         </div>
                     </div>

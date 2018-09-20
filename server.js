@@ -13,10 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 
 let assassins = require('./routes/assassins_routes');
-// let contracts = require('./routes/contracts_routes');
+let contracts = require('./routes/contracts_routes');
 
 app.use(assassins);
-// app.use(contracts);
+app.use(contracts);
 
 
 app.get('/', (req, res, next) => {
