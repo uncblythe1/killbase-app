@@ -78,7 +78,13 @@ router.post('/update_assassin/:assassin_id', (req, res, next) => {
     .where('assassin_id', req.params.assassin_id)
     .then(() => {
        knex('assassins')
-        .update({ full_name: req.body.full_name, code_names: req.body.code_names, weapon: req.body.weapon, contact_info: req.body.contact_info, age: req.body.age, price: req.body.price, rating: req.body.rating, kills: req.body.kills }, '*')
+        .update({ 
+        full_name: req.body.full_name,
+        code_names: req.body.code_names,
+        weapon: req.body.weapon,
+        contact_info: req.body.contact_info,
+        age: req.body.age, price: req.body.price,
+        rating: req.body.rating, kills: req.body.kills }, '*')
         .where('assassin_id', req.params.assassin_id)
         .then((assassins) => {
           res.render('assassinsViews/index_assassins', {assassins});
