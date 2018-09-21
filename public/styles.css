@@ -58,11 +58,10 @@ nav {
 
   #newAssassinBtn {
     font-family: monospace;
-    align-self: center;
     color: rgb(46, 44, 44);
     line-height: 4em;
     font-size: 25px;
-    margin: 100px 15px 15px 290px;
+    margin: 150px 15px 15px 200px;
   }
 
   .gallery-block{

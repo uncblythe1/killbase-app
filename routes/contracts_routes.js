@@ -123,6 +123,50 @@ router.post('/delete_contract/:contract_id', function(req, res) {
     });
 });
 
+router.get('/active_contracts', (req, res, next) => {
+  knex('contracts')
+    .orderBy('contract_id')
+    .then((contracts) => {
+      res.render('contractsViews/active_contracts', {contracts});
+    })
+    .catch(function(err) {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
+router.get('/completed_contracts', (req, res, next) => {
+
+  knex('contracts')
+    .orderBy('contract_id')
+    .then((contracts) => {
+      res.render('contractsViews/completed_contracts', {contracts});
+    })
+    .catch(function(err) {
+      console.log(err);
+      res.sendStatus(500);
+    });
+  });
+
+  router.get('/done_contracts/:contract_id', (req, res, next) => {
+    knex('contracts')
+    .update({complete: true})
+    .where('contract_id', req.params.contract_id)
+      .then(() => {
+        knex('contracts')
+        .orderBy('contract_id')
+        .then((contracts) => {
+        res.render('contractsViews/index_contracts', {contracts});
+      })
+    })
+      .catch(function(err) {
+        console.log(err);
+        res.sendStatus(500);
+      });
+    });
+
+
+
   
 
 module.exports = router;

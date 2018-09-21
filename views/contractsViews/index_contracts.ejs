@@ -10,8 +10,15 @@
       <% include ../header.ejs %>
       <body>
           <a href="/new_contract">
-              <p id= 'newAssassinBtn'>New Contract</p>
+              <p style = "display: inline-block" id= 'newAssassinBtn'>New Contract</p>
+              </a>
+          <a href="/active_contracts">
+          <p style = "display: inline-block" id= 'newAssassinBtn'>Active Contracts</p>
           </a>
+          <a href="/completed_contracts">
+            <p style = "display: inline-block" id= 'newAssassinBtn'>Completed Contracts</p>
+            </a>
+
          <section  class="gallery-block cards-gallery">
             <div class="container">
                 <div class="heading">
@@ -32,7 +39,8 @@
                     <p class="text-muted card-text">Budget:  <%= contract.budget %></p>
                     <p class="text-muted card-text">Complete:  <%= contract.complete %></p>
                     <a href="/update_contract/<%=contract.contract_id %>"><button id= 'editContract'>Edit</button></a>
-                    <form action ="/delete_contract/<%= contract.contract_id %>" method="POST"> <button id= 'deleteContract'>Complete</button></form>
+                    <a href="/done_contracts/<%=contract.contract_id %>"><button id= 'completeContract'>Complete</button></a>
+                    <form action ="/delete_contract/<%= contract.contract_id %>" method="POST"> <button id= 'deleteContract'>Delete</button></form>
                             </div>
                         </div>
                     </div>
