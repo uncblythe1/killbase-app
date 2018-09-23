@@ -25,13 +25,13 @@
                         <img src='<%= assassin.photo %>' alt="Card Image" class="card-img-top">
                       </a>
                         <div class="card-body"><a href='/assassins/<%= assassin.assassin_id %>'>
-                            <h6><%= assassin.full_name %></h6>
+                            <h6 style= "font-weight: bold; font-size: 25px;"><%= assassin.full_name %></h6>
                 <p class="text-muted card-text">'<%= assassin.code_names %>'</p>
-                <p class="text-muted card-text">Weapon:  <%= assassin.weapon %></p>
-                <p class="text-muted card-text">Contact Info:  <%= assassin.contact_info %></p>
-                <p class="text-muted card-text">Age:  <%= assassin.age %></p>
-                <p class="text-muted card-text">Price:  <%= assassin.price %></p>
-                <p class="text-muted card-text">No. of Kills:  <%= assassin.kills %></p>
+                <p style= "text-align: left"><span style= "font-weight: bold; font-size: 16px;">WEAPON:</span><span class="text-muted card-text">  <%= assassin.weapon %></span></p>
+                <p style= "text-align: left"><span style= "font-weight: bold; font-size: 16px;">CONTACT INFO:</span><span class="text-muted card-text">  <%= assassin.contact_info %></span></p>
+                <p style= "text-align: left"><span style= "font-weight: bold; font-size: 16px;">AGE:</span><span class="text-muted card-text">  <%= assassin.age %></span></p>
+                <p style= "text-align: left"><span style= "font-weight: bold; font-size: 16px;">PRICE:</span><span class="text-muted card-text">  <%= assassin.price %></span></p>
+                <p style= "text-align: left"><span style= "font-weight: bold; font-size: 16px;">NO. OF KILLS:</span><span class="text-muted card-text">  <%= assassin.kills %></span></p>
                 <a href="/update_assassin/<%=assassin.assassin_id %>"><button id= 'editAssassin'>Edit</button></a>
                 <form action ="/delete_assassin/<%= assassin.assassin_id %>" method="POST" style="display:inline-block"> <button id= 'deleteAssassin'>Delete</button></form>
                         </div>

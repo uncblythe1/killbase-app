@@ -68,6 +68,7 @@ nav {
     margin-top:-600px;
     padding-bottom: 60px;
     padding-top: 60px;
+    font-family: monospace;
   }
   
   .gallery-block .heading{
@@ -83,7 +84,7 @@ nav {
   
   .gallery-block.cards-gallery h6 {
     font-size: 17px;
-    font-weight: bold; 
+    font-weight: bold;
   }
   
   .gallery-block.cards-gallery .card{

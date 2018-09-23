@@ -32,15 +32,15 @@
                             <img src='<%= contract.target_photo %>' alt="Card Image" class="card-img-top">
                           </a>
                             <div class="card-body"><a href='/contracts/<%= contract.contract_id %>'>
-                                <h6><%= contract.target_name %></h6>
-                    <p class="text-muted card-text">Location:  <%= contract.target_location %></p>
-                    <p class="text-muted card-text">Security:  <%= contract.target_security %></p>
-                    <p class="text-muted card-text">Client Name:  <%= contract.client_name %></p>
-                    <p class="text-muted card-text">Budget:  <%= contract.budget %></p>
-                    <p class="text-muted card-text">Complete:  <%= contract.complete %></p>
+                                <h6 style= "font-weight: bold; font-size: 25px;"><%= contract.target_name %></h6>
+                    <p style= "text-align: left"><span style= "font-weight: bold; font-size: 16px;">Target Location:</span><span class="text-muted card-text">  <%= contract.target_location %></span></p>
+                    <p style= "text-align: left"><span style= "font-weight: bold; font-size: 16px;">Security:</span><span class="text-muted card-text">  <%= contract.target_security %></span></p>
+                    <p style= "text-align: left"><span style= "font-weight: bold; font-size: 16px;">Client Name:</span><span class="text-muted card-text">  <%= contract.client_name %></span></p>
+                    <p style= "text-align: left"><span style= "font-weight: bold; font-size: 16px;">Budget:</span><span class="text-muted card-text">  <%= contract.budget %></span></p>
+                    <p style= "text-align: left"><span style= "font-weight: bold; font-size: 16px;">Complete:</span><span class="text-muted card-text">  <%= contract.complete %></span></p>
                     <a href="/update_contract/<%=contract.contract_id %>"><button id= 'editContract'>Edit</button></a>
                     <a href="/done_contracts/<%=contract.contract_id %>"><button id= 'completeContract'>Complete</button></a>
-                    <form action ="/delete_contract/<%= contract.contract_id %>" method="POST"> <button id= 'deleteContract'>Delete</button></form>
+                    <form action ="/delete_contract/<%= contract.contract_id %>" method="POST" style= "display: inline-block"> <button id= 'deleteContract'>Delete</button></form>
                             </div>
                         </div>
                     </div>
